@@ -180,3 +180,239 @@
       margin: 3px 0;
 
     }
+
+    /* Хамбургер меню - странично меню */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -300px; /* скрито по подразбиране */
+  width: 250px;
+  height: 100%;
+  background: #fff;
+  box-shadow: 2px 0 5px rgba(0,0,0,0.2);
+  z-index: 2000;
+  transition: left 0.3s ease;
+  overflow-y: auto;
+}
+
+.side-menu.active {
+  left: 0;
+}
+
+.side-menu .close-btn {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  color: red;
+  cursor: pointer;
+  padding: 10px 20px;
+}
+
+.side-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 1rem 0;
+}
+
+.side-menu ul li a {
+  display: block;
+  padding: 10px 20px;
+  color: #004080;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.side-menu ul li a:hover {
+  background: #004080;
+  color: #fff;
+}
+
+.side-menu ul li .submenu {
+  display: none;
+  padding-left: 20px;
+}
+
+.side-menu ul li.open .submenu {
+  display: block;
+}
+
+/* Overlay */
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease;
+  z-index: 1500;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Хамбургер бутон (три линии) */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+  z-index: 3000;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: #004080;
+  display: block;
+  border-radius: 2px;
+}
+
+/* Мобилен адаптивен дизайн */
+@media (max-width: 1200px) {
+  nav ul {
+    display: none; /* Скриваме основното меню */
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* ============================= */
+/* FULL RESPONSIVE DESIGN */
+/* ============================= */
+
+/* --- Навигация --- */
+@media (max-width: 1200px) {
+  nav {
+    justify-content: space-between;
+    padding: 1rem 20px;
+  }
+
+  nav ul {
+    display: none; /* Скриваме основното меню */
+  }
+
+  .hamburger {
+    display: flex;
+  }
+}
+
+/* --- Hero секция --- */
+@media (max-width: 1200px) {
+  .hero {
+    height: auto;
+    padding: 80px 20px 40px 20px;
+  }
+
+  .hero h1 {
+    font-size: 2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .btn {
+    padding: 0.7rem 1.2rem;
+  }
+}
+
+/* --- Features секция --- */
+@media (max-width: 992px) {
+  .features {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .feature {
+    flex: 1 1 calc(50% - 2rem); /* две колони на таблет */
+    text-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+  .features {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .feature {
+    flex: 1 1 100%; /* една колона на телефон */
+  }
+}
+
+/* --- Services секция --- */
+@media (max-width: 992px) {
+  .service-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 2rem;
+  }
+
+  .card {
+    flex: 1 1 calc(50% - 2rem); /* две колони на таблет */
+    max-width: 45%;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .service-cards {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+
+  .card {
+    flex: 1 1 100%; /* една колона на телефон */
+    max-width: 90%;
+  }
+}
+
+/* --- Футър --- */
+@media (max-width: 768px) {
+  footer {
+    font-size: 0.8rem;
+    padding: 15px 20px;
+  }
+}
+
+/* --- Hero малки телефони --- */
+@media (max-width: 480px) {
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .hero p {
+    font-size: 0.85rem;
+  }
+
+  .btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+
+  .feature h3 {
+    font-size: 1.2rem;
+  }
+
+  .feature p {
+    font-size: 0.85rem;
+  }
+
+  .card h3 {
+    font-size: 1rem;
+  }
+
+  .card p {
+    font-size: 0.8rem;
+  }
+}
