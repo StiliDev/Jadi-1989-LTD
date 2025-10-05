@@ -3,6 +3,7 @@
       font-family: Arial, sans-serif;
       line-height: 1.6;
       color: #333;
+      
     }
 
     /* Навигация */
@@ -14,6 +15,10 @@
       left: 0;
       width: 100%;
       z-index: 1000;
+    }
+
+    main{
+      flex: auto;
     }
 
     nav {
@@ -416,3 +421,278 @@
     font-size: 0.8rem;
   }
 }
+
+/* ============ CONTACT PAGE ============ */
+
+.contact-page main {
+  margin-top: 140px;
+  margin-bottom: 60px;
+  padding: 60px 20px; /* ← добавих px */
+  min-height: calc(100vh - 220px);
+  display: flex;
+  align-items: center;
+  justify-content: center; /* центрира съдържанието */
+}
+
+.contact-info {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 40px 20px; /* ← добавих px */
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.contact-details {
+  flex: 1 1 400px; /* позволяваме адаптивност */
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.contact-card {
+  display: flex;
+  align-items: center;
+  background: #f9f9f9;
+  padding: 1rem 1.5rem;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  margin-bottom: 1rem;
+  word-break: break-word;
+}
+
+.contact-card i {
+  font-size: 1.8rem;
+  color: #004080;
+  margin-right: 1rem;
+  width: 40px;
+  text-align: center;
+}
+
+.contact-card h3 {
+  margin: 0;
+  color: #004080;
+}
+
+.contact-card a {
+  text-decoration: none;
+  color: #333;
+}
+
+.contact-card a:hover {
+  color: #004080;
+  text-decoration: underline;
+}
+
+.map {
+  flex: 1 1 500px; /* ← по-широка карта */
+  min-width: 400px;
+  height: 450px; /* малко по-висока */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.map iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+  border-radius: 10px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 992px) {
+  .contact-info {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .contact-details, .map {
+    width: 100%;
+    min-width: unset;
+  }
+
+  .map {
+    height: 350px;
+  }
+
+  .contact-page main {
+    margin-top: 120px;
+    margin-bottom: 40px;
+    padding: 40px 15px;
+    align-items: flex-start;
+  }
+}
+
+/* ============================== */
+/* ACCOUNTING SERVICES PAGE STYLES */
+/* ============================== */
+
+/* Hero секция */
+.accounting-page .hero {
+  background: linear-gradient(
+      rgba(0,0,0,0.5),
+      rgba(0,0,0,0.5)
+    ),
+    url("https://ccitraining.edu/wp-content/uploads/2024/01/accounting-in-a-business.webp") no-repeat center center/cover;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  padding: 0 20px;
+  margin-top: 70px;
+}
+
+.accounting-page .hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  text-shadow: 2px 2px 6px rgba(0,0,0,0.5);
+}
+
+.accounting-page .hero p {
+  font-size: 1.2rem;
+  max-width: 800px;
+  margin-bottom: 2rem;
+  text-shadow: 1px 1px 4px rgba(0,0,0,0.5);
+}
+
+/* Service Cards */
+.accounting-page .services h2 {
+  text-align: center;
+  margin: 3rem 0 2rem 0;
+  color: #004080;
+}
+
+.accounting-page .service-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+  max-width: 1200px;
+  margin: auto;
+  padding: 0 20px;
+}
+
+.accounting-page .card {
+  background: #fff;
+  flex: 1 1 calc(45% - 2rem);
+  min-width: 280px;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.accounting-page .card i {
+  font-size: 3rem;
+  color: #004080;
+  margin-bottom: 1rem;
+}
+
+.accounting-page .card h3 {
+  color: #004080;
+  margin-bottom: 1rem;
+  font-size: 1.5rem;
+}
+
+.accounting-page .card p {
+  font-size: 1rem;
+  color: #555;
+}
+
+/* Hover ефект на картите */
+.accounting-page .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 20px rgba(0,0,0,0.2);
+}
+
+/* Info секция с текст и изображение */
+.accounting-page .info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: 4rem auto;
+  padding: 0 20px;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+
+.accounting-page .info-text {
+  flex: 1 1 400px;
+}
+
+.accounting-page .info-text h2 {
+  color: #004080;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.accounting-page .info-text p {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.accounting-page .info-image {
+  flex: 1 1 400px;
+}
+
+.accounting-page .info-image img {
+  width: 100%;
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+}
+
+/* Responsive дизайн */
+@media (max-width: 992px) {
+  .accounting-page .card {
+    flex: 1 1 100%;
+    max-width: 500px;
+  }
+
+  .accounting-page .info {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .accounting-page .info-image img {
+    max-width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .accounting-page .hero h1 {
+    font-size: 2rem;
+  }
+
+  .accounting-page .hero p {
+    font-size: 1rem;
+  }
+
+  .accounting-page .card h3 {
+    font-size: 1.3rem;
+  }
+
+  .accounting-page .card p {
+    font-size: 0.95rem;
+  }
+
+  .accounting-page .info-text h2 {
+    font-size: 1.5rem;
+  }
+
+  .accounting-page .info-text p {
+    font-size: 0.95rem;
+  }
+}
+

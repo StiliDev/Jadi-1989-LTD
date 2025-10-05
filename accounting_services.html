@@ -51,6 +51,54 @@ head>
 
     <div class="overlay" id="overlay"></div>
 
+   <main class="accounting-page">
+  <!-- Hero секция -->
+  <section class="hero">
+    <h1>Счетоводни услуги</h1>
+    <p>Пълно счетоводство за микро, малки и средни предприятия, земеделски производители и свободни професии. Независимо от дейността ви, ние ще се погрижим за всички счетоводни процеси във вашата фирма.</p>
+    <a href="contact.html" class="btn">Свържете се с нас</a>
+  </section>
+
+  <!-- Секция с услуги -->
+  <section class="services">
+    <h2>Нашите счетоводни услуги включват:</h2>
+    <div class="service-cards">
+      <div class="card animate">
+        <i class="fas fa-file-invoice-dollar"></i>
+        <h3>Счетоводство на документи</h3>
+        <p>Обработка на първични документи и регулярно завеждане на счетоводни регистри.</p>
+      </div>
+      <div class="card animate">
+        <i class="fas fa-file-signature"></i>
+        <h3>Декларации и отчети</h3>
+        <p>Изготвяне и подаване на декларации (ЗКПО, ЗДДФЛ, ЗДДС и др.) и справки към НОИ, НАП и НСИ.</p>
+      </div>
+      <div class="card animate">
+        <i class="fas fa-calendar-check"></i>
+        <h3>Годишно приключване</h3>
+        <p>Годишно счетоводно приключване и предоставяне на пълни финансови отчети.</p>
+      </div>
+      <div class="card animate">
+        <i class="fas fa-users-cog"></i>
+        <h3>Услуги свързани със служители</h3>
+        <p>Изготвяне на трудови и граждански договори, изчисляване на заплати, осигуровки и дни отпуск, ведомости и месечно осчетоводяване на осигуровки и данъци.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Информационен блок -->
+  <section class="info">
+    <div class="info-text animate">
+      <h2>Защо да изберете нас?</h2>
+      <p>Ние осигуряваме професионално и точно счетоводство, което позволява на вашия бизнес да се развива без излишни административни грижи. С дългогодишен опит и индивидуален подход към всеки клиент, вие можете да се доверите на нашите услуги.</p>
+      <a href="contact.html" class="btn">Свържете се с нас</a>
+    </div>
+    <div class="info-image animate">
+      <img src="https://images.unsplash.com/photo-1554224154-22dec7ec8818?auto=format&fit=crop&w=800&q=80" alt="Счетоводни услуги">
+    </div>
+  </section>
+</main>
+
         <footer>
         <p>&copy; Jadi 1989 LTD</p>
         <p>Designed by Jadi LTD</p>
@@ -88,5 +136,22 @@ head>
     });
   });
 </script>
+
+<!-- Скрипт за анимация при скрол -->
+<script>
+  const animatedItems = document.querySelectorAll('.animate');
+
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if(entry.isIntersecting){
+        entry.target.classList.add('fade-in');
+        observer.unobserve(entry.target); // за да не се повтаря анимацията
+      }
+    });
+  }, {threshold: 0.1});
+
+  animatedItems.forEach(item => observer.observe(item));
+</script>
+
 </body>
 </html>
