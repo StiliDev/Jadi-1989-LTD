@@ -544,6 +544,35 @@
   color: #004080;
 }
 
+.accounting-hero {
+
+      background: linear-gradient(
+        rgba(0,0,0,0.6),
+        rgba(0,0,0,0.6)
+      ),
+       url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat center center/cover;
+      height: 65vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      padding: 0 20px;
+      margin-top: 70px; 
+    }
+
+    .accounting-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .accounting-hero p {
+      max-width: 800px;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
 /* Контейнер за картите */
 .accounting-page .service-cards {
   display: flex;
@@ -700,232 +729,505 @@
 }
 
 /* ===== INFO & CONSULT PAGE STYLES ===== */
-.info-page-main {
-    padding: 100px 20px 60px;
-    max-width: 1200px;
-    margin: 0 auto;
+
+.info-page .info-cards {
+  padding: 3rem 20px;
+}
+
+.info-page .info-cards h2 {
+  width: 100%;               /* да заема цялата ширина */
+  text-align: center;        /* центриране на текста */
+  margin: 2rem 0;            /* разстояние отгоре и отдолу */
+  padding: 0;                /* премахваме евентуален padding */
+  color: #004080;
+  font-size: 2rem;
 }
 
 .info-hero {
-    text-align: center;
-    margin-bottom: 50px;
-}
 
-.info-hero h1 {
-    font-size: 2.8rem;
-    color: #004080;
-    margin-bottom: 1rem;
-}
+      background: linear-gradient(
+        rgba(0,0,0,0.6),
+        rgba(0,0,0,0.6)
+      ),
+       url("https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=2070&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat center center/cover;
+      height: 65vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      padding: 0 20px;
+      margin-top: 70px; 
+    }
 
-.info-hero p {
-    font-size: 1.2rem;
-    color: #555;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.7;
+    .info-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .info-hero p {
+      max-width: 800px;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    /* Контейнер за картите */
+.info-page .info-cards {
+  display: flex;
+  flex-wrap: wrap;        /* позволява колони на широки екрани */
+  justify-content: center; /* центрира картите хоризонтално */
+  gap: 2rem;
+  max-width: 1200px;      /* по-широк контейнер на десктоп */
+  margin: 0 auto;
+  padding: 0 10px;
+  box-sizing: border-box;
 }
 
 /* ===== Cards секция ===== */
-.info-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
+.info-page .card {
+  background: #fff;
+  flex: 1 1 300px;        
+  max-width: 1200px;       /* ограничаваме максималната ширина на карта */
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  margin: 0 auto;         /* центриране на карта в колона */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.info-cards .card {
-    background: #fff;
-    flex: 1 1 250px;
-    max-width: 1200px;
-    padding: 2rem 1.5rem;
-    border-radius: 15px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.info-page .info-cards i {
+  font-size: 3rem;
+  color: #004080;
+  margin-bottom: 1rem;
 }
 
-.info-cards .card i {
-    font-size: 3rem;
-    color: #004080;
-    margin-bottom: 1rem;
+.info-page .info-cards h3 {
+  color: #004080;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
 }
 
-.info-cards .card h3 {
-    color: #004080;
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
+.info-page .info-cards p {
+  font-size: 1rem;
+  color: #555;
 }
 
-.info-cards .card p {
+.info-page .info-cards:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* ===== INFO & CONSULT PAGE - RESPONSIVE ===== */
+
+/* --- Hero секция --- */
+@media (max-width: 1200px) {
+  .info-hero {
+    height: auto;
+    padding: 80px 20px 40px 20px;
+  }
+  .info-hero h1 {
+    font-size: 2.2rem;
+  }
+  .info-hero p {
     font-size: 1rem;
-    color: #555;
-    line-height: 1.6;
+  }
 }
 
-.info-cards .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
-}
-
-/* ===== Responsive ===== */
 @media (max-width: 992px) {
-    .info-hero h1 {
-        font-size: 2.2rem;
-    }
-    .info-hero p {
-        font-size: 1rem;
-    }
-    .info-cards .card {
-        flex: 1 1 45%;
-        max-width: 45%;
-    }
+  .info-hero {
+    padding: 80px 15px 40px 15px;
+  }
+  .info-hero h1 {
+    font-size: 2rem;
+  }
+  .info-hero p {
+    font-size: 0.95rem;
+  }
 }
 
 @media (max-width: 768px) {
-    .info-hero h1 {
-        font-size: 1.8rem;
-    }
-    .info-hero p {
-        font-size: 0.95rem;
-    }
-    .info-cards {
-        flex-direction: column;
-        align-items: center;
-    }
-    .info-cards .card {
-        flex: 1 1 100%;
-        max-width: 90%;
-    }
+  .info-hero {
+    padding: 70px 15px 30px 15px;
+  }
+  .info-hero h1 {
+    font-size: 1.8rem;
+  }
+  .info-hero p {
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 480px) {
-    .info-hero h1 {
-        font-size: 1.5rem;
-    }
-    .info-hero p {
-        font-size: 0.9rem;
-    }
-    .info-cards .card h3 {
-        font-size: 1.2rem;
-    }
-    .info-cards .card p {
-        font-size: 0.85rem;
-    }
+  .info-hero h1 {
+    font-size: 1.5rem;
+  }
+  .info-hero p {
+    font-size: 0.85rem;
+  }
+}
+
+/* --- Cards секция --- */
+@media (max-width: 1200px) {
+  .info-page .info-cards {
+    gap: 2rem;
+  }
+  .info-page .card {
+    flex: 1 1 300px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .info-page .info-cards {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0 10px;
+  }
+  .info-page .card {
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+  .info-page .card h3 {
+    font-size: 1.3rem;
+  }
+  .info-page .card p {
+    font-size: 0.95rem;
+  }
+  .info-page .card img {
+    max-height: 250px;
+  }
+  .info-page .card .btn {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 0.7rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .info-page .card img {
+    max-height: 200px;
+  }
+  .info-page .card h3 {
+    font-size: 1.2rem;
+  }
+  .info-page .card p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .info-page .card img {
+    max-height: 180px;
+  }
+  .info-page .card h3 {
+    font-size: 1.1rem;
+  }
+  .info-page .card p {
+    font-size: 0.85rem;
+  }
+  .info-page .card .btn {
+    font-size: 0.85rem;
+    padding: 0.6rem 0.9rem;
+  }
+}
+
+/* --- Info секция (текст + изображение) --- */
+@media (max-width: 992px) {
+  .info-page .info {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+  .info-page .info-image {
+    justify-content: center;
+    margin-bottom: 1.5rem;
+  }
+  .info-page .info-text h2 {
+    font-size: 1.8rem;
+  }
+  .info-page .info-text p {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .info-page .info-text h2 {
+    font-size: 1.6rem;
+  }
+  .info-page .info-text p {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .info-page .info-text h2 {
+    font-size: 1.4rem;
+  }
+  .info-page .info-text p {
+    font-size: 0.9rem;
+  }
+  .info-page .info-image img {
+    max-width: 90%;
+  }
+}
+
+/* Responsive за заглавие */
+@media (max-width: 992px) {
+  .info-page .info-cards h2 {
+    font-size: 1.8rem;
+    margin: 1.5rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .info-page .info-cards h2 {
+    font-size: 1.6rem;
+    margin: 1.2rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .info-page .info-cards h2 {
+    font-size: 1.4rem;
+    margin: 1rem 0;
+  }
 }
 
 /* ===== WEB SERVICES PAGE STYLES ===== */
-.web-page-main {
-    padding: 100px 20px 60px;
-    max-width: 1200px;
-    margin: 0 auto;
+
+
+.web-page .web-cards {
+  padding: 3rem 20px;
+}
+
+.web-page .web-cards h2 {
+  width: 100%;               /* да заема цялата ширина */
+  text-align: center;        /* центриране на текста */
+  margin: 2rem 0;            /* разстояние отгоре и отдолу */
+  padding: 0;                /* премахваме евентуален padding */
+  color: #004080;
+  font-size: 2rem;
 }
 
 .web-hero {
-    text-align: center;
-    margin-bottom: 50px;
-}
 
-.web-hero h1 {
-    font-size: 2.8rem;
-    color: #004080;
-    margin-bottom: 1rem;
-}
+      background: linear-gradient(
+        rgba(0,0,0,0.6),
+        rgba(0,0,0,0.6)
+      ),
+       url("https://plus.unsplash.com/premium_photo-1685086785077-ff65bf749544?q=80&w=2832&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D") no-repeat center center/cover;
+      height: 65vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: #fff;
+      padding: 0 20px;
+      margin-top: 70px; 
+    }
 
-.web-hero p {
-    font-size: 1.2rem;
-    color: #555;
-    max-width: 800px;
-    margin: 0 auto;
-    line-height: 1.7;
+    .web-hero h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .web-hero p {
+      max-width: 800px;
+      font-size: 1.2rem;
+      margin-bottom: 2rem;
+    }
+
+    
+
+/* Контейнер за картите */
+.web-page .web-cards {
+  display: flex;
+  flex-wrap: wrap;        /* позволява колони на широки екрани */
+  justify-content: center; /* центрира картите хоризонтално */
+  gap: 2rem;
+  max-width: 1200px;      /* по-широк контейнер на десктоп */
+  margin: 0 auto;
+  padding: 0 10px;
+  box-sizing: border-box;
 }
 
 /* ===== Cards секция ===== */
-.web-cards {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2rem;
+.web-page .card {
+  background: #fff;
+  flex: 1 1 300px;        
+  max-width: 1200px;       /* ограничаваме максималната ширина на карта */
+  border-radius: 15px;
+  box-shadow: 0 6px 15px rgba(0,0,0,0.1);
+  padding: 2rem 1.5rem;
+  text-align: center;
+  margin: 0 auto;         /* центриране на карта в колона */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.web-cards .card {
-    background: #fff;
-    flex: 1 1 250px;
-    max-width: 1200px;
-    padding: 2rem 1.5rem;
-    border-radius: 15px;
-    box-shadow: 0 6px 15px rgba(0,0,0,0.1);
-    text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.web-page .web-cards i {
+  font-size: 3rem;
+  color: #004080;
+  margin-bottom: 1rem;
 }
 
-.web-cards .card i {
-    font-size: 3rem;
-    color: #004080;
-    margin-bottom: 1rem;
+.web-page .web-cards h3 {
+  color: #004080;
+  margin-bottom: 1rem;
+  font-size: 1.4rem;
 }
 
-.web-cards .card h3 {
-    color: #004080;
-    font-size: 1.4rem;
-    margin-bottom: 1rem;
+.web-page .web-cards p {
+  font-size: 1rem;
+  color: #555;
 }
 
-.web-cards .card p {
+.web-page .web-cards:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.2);
+}
+
+/* ===== WEB PAGE - RESPONSIVE ===== */
+
+/* --- Hero секция --- */
+@media (max-width: 1200px) {
+  .web-hero {
+    height: auto;
+    padding: 80px 20px 40px 20px;
+  }
+  .web-hero h1 {
+    font-size: 2.2rem;
+  }
+  .web-hero p {
     font-size: 1rem;
-    color: #555;
-    line-height: 1.6;
+  }
 }
 
-.web-cards .card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 12px 25px rgba(0,0,0,0.2);
-}
-
-/* ===== Responsive ===== */
 @media (max-width: 992px) {
-    .web-hero h1 {
-        font-size: 2.2rem;
-    }
-    .web-hero p {
-        font-size: 1rem;
-    }
-    .web-cards .card {
-        flex: 1 1 45%;
-        max-width: 45%;
-    }
+  .web-hero {
+    padding: 80px 15px 40px 15px;
+  }
+  .web-hero h1 {
+    font-size: 2rem;
+  }
+  .web-hero p {
+    font-size: 0.95rem;
+  }
 }
 
 @media (max-width: 768px) {
-    .web-hero h1 {
-        font-size: 1.8rem;
-    }
-    .web-hero p {
-        font-size: 0.95rem;
-    }
-    .web-cards {
-        flex-direction: column;
-        align-items: center;
-    }
-    .web-cards .card {
-        flex: 1 1 100%;
-        max-width: 90%;
-    }
+  .web-hero {
+    padding: 70px 15px 30px 15px;
+  }
+  .web-hero h1 {
+    font-size: 1.8rem;
+  }
+  .web-hero p {
+    font-size: 0.9rem;
+  }
 }
 
 @media (max-width: 480px) {
-    .web-hero h1 {
-        font-size: 1.5rem;
-    }
-    .web-hero p {
-        font-size: 0.9rem;
-    }
-    .web-cards .card h3 {
-        font-size: 1.2rem;
-    }
-    .web-cards .card p {
-        font-size: 0.85rem;
-    }
+  .web-hero h1 {
+    font-size: 1.5rem;
+  }
+  .web-hero p {
+    font-size: 0.85rem;
+  }
 }
+
+/* --- Cards секция --- */
+@media (max-width: 1200px) {
+  .web-page .info-cards {
+    gap: 2rem;
+  }
+  .web-page .card {
+    flex: 1 1 300px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 992px) {
+  .web-page .info-cards {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 0 10px;
+  }
+  .web-page .card {
+    flex: 1 1 100%;
+    max-width: 100%;
+    padding: 1.5rem;
+  }
+  .web-page .card h3 {
+    font-size: 1.3rem;
+  }
+  .web-page .card p {
+    font-size: 0.95rem;
+  }
+  .web-page .card img {
+    max-height: 250px;
+  }
+  .web-page .card .btn {
+    width: 100%;
+    font-size: 0.9rem;
+    padding: 0.7rem 1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .web-page .card img {
+    max-height: 200px;
+  }
+  .web-page .card h3 {
+    font-size: 1.2rem;
+  }
+  .web-page .card p {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .web-page .card img {
+    max-height: 180px;
+  }
+  .web-page .card h3 {
+    font-size: 1.1rem;
+  }
+  .web-page .card p {
+    font-size: 0.85rem;
+  }
+  .web-page .card .btn {
+    font-size: 0.85rem;
+    padding: 0.6rem 0.9rem;
+  }
+}
+
+
+
+/* Responsive за заглавие */
+@media (max-width: 992px) {
+  .web-page .web-cards h2 {
+    font-size: 1.8rem;
+    margin: 1.5rem 0;
+  }
+}
+
+@media (max-width: 768px) {
+  .web-page .web-cards h2 {
+    font-size: 1.6rem;
+    margin: 1.2rem 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .web-page .web-cards h2 {
+    font-size: 1.4rem;
+    margin: 1rem 0;
+  }
+}
+
 
 
 
