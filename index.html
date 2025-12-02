@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
  <link rel="stylesheet" href="css/style.css">
+ <link rel="canonical" href="https://jadi1989ltd.com/index.html">
     <title>ЖАДИ 1989 ЕООД</title>
 </head>
 <body class="home-page">
@@ -47,12 +48,13 @@
         </li>
         <li><a href="contact.html">Контакти</a></li>
       </ul>
+       <img src="images/project-info.png.png" class="eu-corner-mobile mobile-only popup-trigger"alt="Проект BG05SFPR002">
     </div>
 
     <div class="overlay" id="overlay"></div>
 
     <section class="hero">
-        <h1>Счетоводство и консултации за Вашия успешен бизнес </h1>
+        <h1>Уеб услуги, счетоводство и консултации за Вашия успешен бизнес </h1>
         <p>   Създадена през 2016 г, нашата фирма предлага информационни, консултантски, уеб и счетоводни услуги на своите клиенти. 
             С доказан опит, натрупан през годините, екипът ни успешно работи за по-доброто развитие на партньорите си. 
             Ние ще Ви помогнем да планирате Вашата печеливша стратeгия, с която да се докажете като лидери на пазара!</p>
@@ -97,10 +99,17 @@
     </div>
   </section>
     <footer>
-        <p>&copy; Jadi 1989 LTD</p>
-        <p>Designed by Jadi 1989 LTD</p>
-    </footer>
-    
+<div class="footer-left">
+  <img src="images/project-info.png.png" class="eu-corner desktop-only popup-trigger" alt="EU Project">
+</div>
+ 
+ <p>&copy; Jadi 1989 LTD</p>
+ <p>Designed by Jadi 1989 LTD</p>
+</footer>
+ <div id="imagePopup" class="popup-overlay">
+    <span class="close-popup">&times;</span>
+    <img id="popupImg" class="popup-img">
+</div>
  <script>
   const hamburger = document.querySelector(".hamburger");
   const sideMenu = document.getElementById("sideMenu");
@@ -133,7 +142,34 @@
     });
   });
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const popup = document.getElementById("imagePopup");
+    const popupImg = document.getElementById("popupImg");
+    const triggers = document.querySelectorAll(".popup-trigger");
+    const closeBtn = document.querySelector(".close-popup");
 
+    // Клик върху малката картинка → отваря popup
+    triggers.forEach(img => {
+        img.addEventListener("click", () => {
+            popupImg.src = img.src;
+            popup.style.display = "flex";
+        });
+    });
+
+    // Затваряне при X
+    closeBtn.addEventListener("click", () => {
+        popup.style.display = "none";
+    });
+
+    // Затваряне при клик извън изображението
+    popup.addEventListener("click", (e) => {
+        if (e.target === popup) {
+            popup.style.display = "none";
+        }
+    });
+});
+</script>
 
 </body>
 </html>

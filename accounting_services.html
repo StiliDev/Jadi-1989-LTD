@@ -5,6 +5,7 @@ head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
  <link rel="stylesheet" href="css/style.css">
+ <link rel="canonical" href="https://jadi1989ltd.com/accounting_services.html">
     <title>ЖАДИ 1989 ЕООД</title>
 </head>
 <body class="accounting-page">
@@ -47,6 +48,7 @@ head>
         </li>
         <li><a href="contact.html">Контакти</a></li>
       </ul>
+      <img src="images/project-info.png.png" class="eu-corner-mobile mobile-only popup-trigger"alt="Проект BG05SFPR002">
     </div>
 
     <div class="overlay" id="overlay"></div>
@@ -99,10 +101,18 @@ head>
   </section>
 </main>
 
-        <footer>
-        <p>&copy; Jadi 1989 LTD</p>
-        <p>Designed by Jadi 1989 LTD</p>
-    </footer>
+<footer>
+<div class="footer-left">
+  <img src="images/project-info.png.png" class="eu-corner desktop-only popup-trigger" alt="EU Project">
+</div>
+ 
+ <p>&copy; Jadi 1989 LTD</p>
+ <p>Designed by Jadi 1989 LTD</p>
+</footer>
+ <div id="imagePopup" class="popup-overlay">
+    <span class="close-popup">&times;</span>
+    <img id="popupImg" class="popup-img">
+</div>
     
  <script>
   const hamburger = document.querySelector(".hamburger");
@@ -152,6 +162,33 @@ head>
 
   animatedItems.forEach(item => observer.observe(item));
 </script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const popup = document.getElementById("imagePopup");
+    const popupImg = document.getElementById("popupImg");
+    const triggers = document.querySelectorAll(".popup-trigger");
+    const closeBtn = document.querySelector(".close-popup");
 
+    // Клик върху малката картинка → отваря popup
+    triggers.forEach(img => {
+        img.addEventListener("click", () => {
+            popupImg.src = img.src;
+            popup.style.display = "flex";
+        });
+    });
+
+    // Затваряне при X
+    closeBtn.addEventListener("click", () => {
+        popup.style.display = "none";
+    });
+
+    // Затваряне при клик извън изображението
+    popup.addEventListener("click", (e) => {
+        if (e.target === popup) {
+            popup.style.display = "none";
+        }
+    });
+});
+</script>
 </body>
 </html>

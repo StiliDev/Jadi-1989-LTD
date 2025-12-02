@@ -5,6 +5,7 @@ head>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
  <link rel="stylesheet" href="css/style.css">
+ <link rel="canonical" href="https://jadi1989ltd.com/contact.html">
     <title>ЖАДИ 1989 ЕООД</title>
 </head>
 <body class="contact-page">
@@ -47,6 +48,7 @@ head>
         </li>
         <li><a href="contact.html">Контакти</a></li>
       </ul>
+      <img src="images/project-info.png.png" class="eu-corner-mobile mobile-only popup-trigger"alt="Проект BG05SFPR002">
     </div>
 
     <div class="overlay" id="overlay"></div>
@@ -81,16 +83,24 @@ head>
         </div>
 
         <div class="map">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d750.2360731902236!2d23.032656830988447!3d42.60821197109764!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d42.6082513!2d23.0335066!5e0!3m2!1sbg!2sbg!4v1759835961696!5m2!1sbg!2sbg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+           <iframe src="https://www.google.com/maps/embed?pb=!1m21!1m12!1m3!1d283.8080238631236!2d23.033933454771663!3d42.60862510837443!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!4m6!3e6!4m0!4m3!3m2!1d42.60877392732677!2d23.034260087543093!5e0!3m2!1sbg!2sbg!4v1759837238865!5m2!1sbg!2sbg" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
           </div>
           
       </section>
     </main>
 
         <footer>
-        <p>&copy; Jadi 1989 LTD</p>
-        <p>Designed by Jadi 1989 LTD</p>
-    </footer>
+<div class="footer-left">
+  <img src="images/project-info.png.png" class="eu-corner desktop-only popup-trigger" alt="EU Project">
+</div>
+ 
+ <p>&copy; Jadi 1989 LTD</p>
+ <p>Designed by Jadi 1989 LTD</p>
+</footer>
+ <div id="imagePopup" class="popup-overlay">
+    <span class="close-popup">&times;</span>
+    <img id="popupImg" class="popup-img">
+</div>
     
  <script>
   const hamburger = document.querySelector(".hamburger");
@@ -123,6 +133,34 @@ head>
       link.parentElement.classList.toggle("open");
     });
   });
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+    const popup = document.getElementById("imagePopup");
+    const popupImg = document.getElementById("popupImg");
+    const triggers = document.querySelectorAll(".popup-trigger");
+    const closeBtn = document.querySelector(".close-popup");
+
+    // Клик върху малката картинка → отваря popup
+    triggers.forEach(img => {
+        img.addEventListener("click", () => {
+            popupImg.src = img.src;
+            popup.style.display = "flex";
+        });
+    });
+
+    // Затваряне при X
+    closeBtn.addEventListener("click", () => {
+        popup.style.display = "none";
+    });
+
+    // Затваряне при клик извън изображението
+    popup.addEventListener("click", (e) => {
+        if (e.target === popup) {
+            popup.style.display = "none";
+        }
+    });
+});
 </script>
 </body>
 </html>
